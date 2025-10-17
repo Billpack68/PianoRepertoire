@@ -2,15 +2,15 @@ package main.java.repertoire;
 
 public class PianoPiece {
   private String name;
-  private Author author;
+  private Composer composer;
   private Arranger arranger;
   private Book book;
   private Genre genre;
 
-  public PianoPiece(String name, Author author, Arranger arranger,
+  public PianoPiece(String name, Composer composer, Arranger arranger,
                     Book book, Genre genre) {
     this.name=name;
-    this.author = author;
+    this.composer = composer;
     this.arranger = arranger;
     this.book = book;
     this.genre = genre;
@@ -19,7 +19,7 @@ public class PianoPiece {
   @Override
   public String toString() {
     return "Name = '" + name + '\'' +
-            ", author = " + author.getName() +
+            ", author = " + composer.getName() +
             ", arranger = " + arranger.getName() +
             ", book = " + book.getName() +
             ", genre = " + genre.getName();
@@ -27,7 +27,7 @@ public class PianoPiece {
 
   public String getName() {return name;}
 
-  public Author getAuthor() {return author;}
+  public Composer getAuthor() {return composer;}
 
   public Arranger getArranger() {return arranger;}
 
@@ -37,7 +37,7 @@ public class PianoPiece {
 
   public void setName(String newName) {name = newName;}
 
-  public void setAuthor(Author newAuthor) {author = newAuthor;}
+  public void setAuthor(Composer newComposer) {composer = newComposer;}
 
   public void setArranger(Arranger newArranger) {arranger = newArranger;}
 

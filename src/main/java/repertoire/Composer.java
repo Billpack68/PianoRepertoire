@@ -1,9 +1,9 @@
 package main.java.repertoire;
 
-public class Author {
+public class Composer {
   private String name;
 
-  public Author(String name) {
+  public Composer(String name) {
     this.name=name;
   }
 

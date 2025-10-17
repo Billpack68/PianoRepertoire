@@ -8,7 +8,7 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     List<PianoPiece> pianoPieces = new ArrayList<>();
-    List<Author> authors = new ArrayList<>();
+    List<Composer> composers = new ArrayList<>();
     List<Arranger> arrangers = new ArrayList<>();
     List<Book> books = new ArrayList<>();
     List<Genre> genres = new ArrayList<>();
