@@ -16,6 +16,15 @@ public class PianoPiece {
     this.genre = genre;
   }
 
+  @Override
+  public String toString() {
+    return "Name = '" + name + '\'' +
+            ", author = " + author.getName() +
+            ", arranger = " + arranger.getName() +
+            ", book = " + book.getName() +
+            ", genre = " + genre.getName();
+  }
+
   public String getName() {return name;}
 
   public Author getAuthor() {return author;}
