@@ -1,7 +1,9 @@
-public class Genre {
+package main.java.repertoire;
+
+public class Book {
   private String name;
 
-  public Genre(String name) {
+  public Book(String name) {
     this.name=name;
   }
 

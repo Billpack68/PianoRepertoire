@@ -1,7 +1,9 @@
-public class Book {
+package main.java.repertoire;
+
+public class Author {
   private String name;
 
-  public Book(String name) {
+  public Author(String name) {
     this.name=name;
   }
 

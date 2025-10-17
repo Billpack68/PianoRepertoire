@@ -1,7 +1,9 @@
-public class Arranger {
+package main.java.repertoire;
+
+public class Genre {
   private String name;
 
-  public Arranger(String name) {
+  public Genre(String name) {
     this.name=name;
   }
 

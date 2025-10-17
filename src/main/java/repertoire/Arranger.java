@@ -1,7 +1,9 @@
-public class Author {
+package main.java.repertoire;
+
+public class Arranger {
   private String name;
 
-  public Author(String name) {
+  public Arranger(String name) {
     this.name=name;
   }
 
