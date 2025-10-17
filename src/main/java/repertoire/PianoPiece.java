@@ -15,4 +15,24 @@ public class PianoPiece {
     this.book = book;
     this.genre = genre;
   }
+
+  public String getName() {return name;}
+
+  public Author getAuthor() {return author;}
+
+  public Arranger getArranger() {return arranger;}
+
+  public Book getBook() {return book;}
+
+  public Genre getGenre() {return genre;}
+
+  public void setName(String newName) {name = newName;}
+
+  public void setAuthor(Author newAuthor) {author = newAuthor;}
+
+  public void setArranger(Arranger newArranger) {arranger = newArranger;}
+
+  public void setBook(Book newBook) {book = newBook;}
+
+  public void setGenre(Genre newGenre) {genre = newGenre;}
 }
