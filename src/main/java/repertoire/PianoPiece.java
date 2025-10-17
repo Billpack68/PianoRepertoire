@@ -1,5 +1,7 @@
 package main.java.repertoire;
 
+import java.util.Objects;
+
 public class PianoPiece {
   private String name;
   private Composer composer;
@@ -44,4 +46,19 @@ public class PianoPiece {
   public void setBook(Book newBook) {book = newBook;}
 
   public void setGenre(Genre newGenre) {genre = newGenre;}
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    PianoPiece that=(PianoPiece) o;
+    return Objects.equals(name, that.name) && Objects.equals(composer, that.composer)
+            && Objects.equals(arranger, that.arranger) && Objects.equals(book, that.book)
+            && Objects.equals(genre, that.genre);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, composer, arranger, book, genre);
+  }
 }
