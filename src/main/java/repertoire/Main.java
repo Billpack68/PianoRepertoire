@@ -15,7 +15,9 @@ public class Main {
     boolean running = true;
 
     while (running) {
-      System.out.println("What would you like to do?");
+      System.out.println("--------------------------------");
+      System.out.println("---What would you like to do?---");
+      System.out.println("--------------------------------");
       System.out.println("1. Add something to the database");
       System.out.println("2. View everything in the database");
       System.out.println("3. Exit");
@@ -34,9 +36,68 @@ public class Main {
 
           switch (nextChoice) {
             case "1":
-              // TODO: Check if I have a composer, arranger, book, and genre in my database already
-              // TODO: If I have at least one of each, get the name of a song, then select the rest
-              // TODO: Add the new PianoPiece to the database
+              if ((composers.isEmpty() && arrangers.isEmpty()) || genres.isEmpty()) {
+                System.out.println("I need at least 1 composer/arranger and genre in my database.");
+                break;
+              }
+              System.out.println("Enter song name:");
+              String newSongName = scanner.nextLine();
+
+              System.out.println("Enter composer (leave blank for empty):");
+              String newComposerName = scanner.nextLine();
+              Composer newComposerObject = new Composer(null);
+              if (!Objects.equals(newComposerName, "")) {
+                newComposerObject.setName(newComposerName);
+                if (!composers.contains(newComposerObject)) {
+                  System.out.println("I don't know who that is yet!");
+                  break;
+                }
+              }
+
+              System.out.println("Enter arranger (leave blank for empty):");
+              String newArrangerName = scanner.nextLine();
+              Arranger newArrangerObject = new Arranger(null);
+              if (!Objects.equals(newArrangerName, "")) {
+                newArrangerObject.setName(newArrangerName);
+                if (!arrangers.contains(newArrangerObject)) {
+                  System.out.println("I don't know who that is yet!");
+                  break;
+                }
+              }
+
+              if (Objects.equals(newComposerName, "") && Objects.equals(newArrangerName, "")) {
+                System.out.println("I need either a composer or arranger. Let's try this again!");
+                break;
+              }
+
+              System.out.println("Enter book (leave blank for empty):");
+              String newBookName = scanner.nextLine();
+              Book newBookObject = new Book(null);
+              if (!Objects.equals(newBookName, "")) {
+                newBookObject .setName(newBookName);
+                if (!books.contains(newBookObject)) {
+                  System.out.println("I don't know that book yet!");
+                }
+              }
+
+              System.out.println("Enter genre");
+              String newGenreName = scanner.nextLine();
+              if (Objects.equals(newGenreName, "")) {
+                System.out.println("I need a genre for this song!");
+                break;
+              }
+              Genre newGenreObject = new Genre(newGenreName);
+              if (!genres.contains(newGenreObject)) {
+                System.out.println("I don't know that genre yet!");
+                break;
+              }
+
+              PianoPiece newPianoPiece = new PianoPiece(newSongName, newComposerObject, newArrangerObject,
+                      newBookObject, newGenreObject);
+              pianoPieces.add(newPianoPiece);
+              System.out.println("Added that to the database!");
+              break;
+
             case "2":
               System.out.println("Enter a name for a composer:");
               String composerName = scanner.nextLine();
