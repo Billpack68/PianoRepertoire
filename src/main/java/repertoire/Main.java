@@ -153,7 +153,39 @@ public class Main {
           break;
 
         case "2":
-          // TODO: For seeing what's in the database (or soon to be database)
+          if (!pianoPieces.isEmpty()) {
+            System.out.println("Songs:");
+            for (PianoPiece piece : pianoPieces) {
+              System.out.println(piece.toString());
+            }
+          }
+          if (!composers.isEmpty()) {
+            System.out.println("Composers:");
+            for (Composer composer : composers) {
+              System.out.println(composer.toString());
+            }
+          }
+          if (!arrangers.isEmpty()) {
+            System.out.println("Arrangers:");
+            for (Arranger arranger : arrangers) {
+              System.out.println(arranger.toString());
+            }
+          }
+          if (!books.isEmpty()) {
+            System.out.println("Books:");
+            for (Book book : books) {
+              System.out.println(book.toString());
+            }
+          }
+          if (!genres.isEmpty()) {
+            System.out.println("Genres:");
+            for (Genre genre : genres) {
+              System.out.println(genre.toString());
+            }
+          }
+
+          break;
+
         case "3":
           running = false;
           System.out.println("Goodbye!");
